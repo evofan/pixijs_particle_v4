@@ -40,7 +40,7 @@ const ASSET_CAT = "images/pic_star.png";
 let TEXTURE_STAR;
 
 PIXI.loader
-  .add("bg_data", ASSET_BG)
+  //.add("bg_data", ASSET_BG)
   .add("star_data", ASSET_CAT)
   .load(onAssetsLoaded);
 
@@ -51,10 +51,12 @@ PIXI.loader
  */
 function onAssetsLoaded(loader, res) {
   // BG
+  /*
   bg = new PIXI.Sprite(res.bg_data.texture);
   container.addChild(bg);
   bg.x = 0;
   bg.y = 0;
+  */
 
   //TEXTURE_STAR = new PIXI.Sprite(res.star_data.texture);
 
