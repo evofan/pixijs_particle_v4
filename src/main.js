@@ -23,7 +23,7 @@ let bg;
 let isCatDragging = false;
 
 let particleList = [];
-let particleMax = 10;
+let particleMax = 1;
 let friction_coe = 0.95;
 
 let container = new PIXI.Container();
@@ -83,7 +83,7 @@ function onAssetsLoaded(loader, res) {
   text.y = 20;
 
   // Text2
-  let text2 = new PIXI.Text("MouseOver the Stage(PC only)", {
+  let text2 = new PIXI.Text("Click(Touch) the Stage", {
     fontFamily: "Arial",
     fontSize: 24,
     fill: 0xff0033,
@@ -140,15 +140,14 @@ const emitParticles = () => {
   // console.log("emitParticles()");
   for (let i = 0; i < particleMax; i++) {
     let obj = new PIXI.Sprite(TEXTURE_OBJ);
-    // obj.x = WIDTH/2;//Math.floor(Math.random() * (WIDTH + 1 - 1)) + 1;
-    // obj.y = Math.floor(Math.random() * (HEIGHT + 1 - 1)) + 1;
-    // console.log(
-    //  app.renderer.plugins.interaction.mouse.getLocalPosition(app.stage)
-    //); // x:112 y:117、会社PCだとok？
-    // const position = app.renderer.plugins.interaction.mouse.getLocalPosition(displayObject);
-    // console.log(app.stage.plugins.interaction.mouse.global.x);
-    obj.x = app.renderer.plugins.interaction.mouse.global.x; // 会社PCだとok？
-    obj.y = app.renderer.plugins.interaction.mouse.global.y; // 会社PCだとok？
+    let position;
+    app.renderer.plugins.interaction.on("pointerdown", e => {
+      // console.log("pointerdown");
+      position = e.data.global;
+      //if (position.x <= 0) return;
+      obj.x = position.x;
+      obj.y = position.y;
+    });
 
     // anchor
     obj.anchor.set(0.1);
@@ -158,8 +157,8 @@ const emitParticles = () => {
     obj.scale.set(scale);
 
     // obj.alpha = 0.5;
-    obj.vx = 50 * (Math.random() - 0.5); //0;
-    obj.vy = 50 * (Math.random() - 0.5); //0;
+    obj.vx = 50 * (Math.random() - 0.5);
+    obj.vy = 50 * (Math.random() - 0.5);
     obj.life = MAX_LIFE;
 
     // tint ver, too dark
@@ -203,7 +202,7 @@ const updateParticles = () => {
     let colorMatrix = new PIXI.filters.ColorMatrixFilter();
     e.hue +=1;
     e.hue >= 360 ? e.hue = 0 : e.hue;
-    colorMatrix.hue(e.hue, 1); // blend addと二律背反？
+    colorMatrix.hue(e.hue, 1); // blend add batting?
     e.filters = [colorMatrix];
     */
 
