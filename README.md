@@ -26,3 +26,6 @@ reference
 
 **色相(hue)**  
 [https://ja.wikipedia.org/wiki/%E8%89%B2%E7%9B%B8](https://ja.wikipedia.org/wiki/%E8%89%B2%E7%9B%B8)  
+
+**Starting New Game - How To Get Touch [x,y] On Android? - Pixi.js - HTML5 Game Devs Forum**  
+[https://www.html5gamedevs.com/topic/32142-starting-new-game-how-to-get-touch-xy-on-android/](https://www.html5gamedevs.com/topic/32142-starting-new-game-how-to-get-touch-xy-on-android/)  
