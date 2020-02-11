@@ -1,5 +1,7 @@
 # Testing particles with PixiJS.  
 
+![https://evofan.github.io/pixijs_particle_v4/pic_screenshot.jpg](https://evofan.github.io/pixijs_particle_v4/pic_screenshot.jpg "image") 
+
 **DEMO**  
 [https://evofan.github.io/pixijs_particle_v4/](https://evofan.github.io/pixijs_particle_v4/)  
 
